@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate Sales</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f8e8c6;
+        }
+        h1 {
+            background-color: #5a3825;
+            color: white;
+            padding: 15px;
+            margin: 0;
+        }
+        https://www.google.com/imgres?imgurl=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F61Iy5XrzC-L.jpg&tbnid=-oTha5nlwMlDwM&vet=1&imgrefurl=https%3A%2F%2Fwww.amazon.in%2FCadbury-Dairy-Milk-Chocolate-165%2Fdp%2FB00PQ7EKCG&docid=xvw_yom4pf_UcM&w=1500&h=1500&source=sh%2Fx%2Fim%2Fm1%2F0&kgs=f0523b2671e468d6{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+        https://www.google.com/imgres?imgurl=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F81EAqP0D0%2BL.jpg&tbnid=BrvzUn2w2GBROM&vet=1&imgrefurl=https%3A%2F%2Fwww.amazon.in%2FAmul-Dark-Chocolate-150g%2Fdp%2FB07CVJHKWG&docid=VvVggBuxYA1MyM&w=1978&h=2560&source=sh%2Fx%2Fim%2Fm1%2F0&kgs=b0b06184a69b79df {
+            border: 1px solid #5a3825;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 15px;
+            background-color: white;
+            width: 200px;
+            text-align: center;
+        }
+        https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.thebutterhalf.com%2Fwp-content%2Fuploads%2F2022%2F09%2FWhite-Chocolate-20-500x500.jpg&tbnid=U6Gc7jD1QXS_zM&vet=1&imgrefurl=https%3A%2F%2Fwww.thebutterhalf.com%2Fhow-to-make-white-chocolate-2%2F&docid=KuaX2wxdP1SPNM&w=500&h=500&source=sh%2Fx%2Fim%2Fm1%2F0&kgs=429f83935e3124b2 {
+            width: 100%;
+            height: 150px;
+            border-radius: 8px;
+        }
+        button {
+            background-color: #5a3825;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #42291a;
+        }
+        #cart {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border: 2px solid #5a3825;
+            display: inline-block;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Chocolate Sales</h1>
+
+    <div class="container">
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Milk Chocolate">
+            <h3>Milk Chocolate</h3>
+            <p>$5.00</p>
+            <button onclick="addToCart('Milk Chocolate', 5)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Dark Chocolate">
+            <h3>Dark Chocolate</h3>
+            <p>$6.50</p>
+            <button onclick="addToCart('Dark Chocolate', 6.5)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="White Chocolate">
+            <h3>White Chocolate</h3>
+            <p>$4.75</p>
+            <button onclick="addToCart('White Chocolate', 4.75)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <h3>Total: $<span id="total-price">0.00</span></h3>
+    </div>
+
+    <script>
+        let totalPrice = 0;
+
+        function addToCart(name, price) {
+            const cartItems = document.getElementById("cart-items");
+            const listItem = document.createElement("li");
+            listItem.textContent = `${name} - $${price.toFixed(2)}`;
+            cartItems.appendChild(listItem);
+
+            totalPrice += price;
+            document.getElementById("total-price").textContent = totalPrice.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
